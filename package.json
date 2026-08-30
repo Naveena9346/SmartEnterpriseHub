@@ -1,0 +1,30 @@
+{
+  "name": "smart-enterprise-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise-grade SmartEnterpriseHub Management Platform",
+  "scripts": {
+    "setup": "cmd /c \"npm run setup:backend && npm run setup:frontend\"",
+    "setup:backend": "cd backend && cmd /c \"npm install\"",
+    "setup:frontend": "cd frontend && cmd /c \"npm install\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && cmd /c \"npm run dev\"",
+    "dev:frontend": "cd frontend && cmd /c \"npm run dev\"",
+    "build": "cd backend && cmd /c \"npm run build\" && cd ../frontend && cmd /c \"npm run build\"",
+    "test": "cd backend && cmd /c \"npm run test\"",
+    "test:coverage": "cd backend && cmd /c \"npm run test:coverage\""
+  },
+  "keywords": [
+    "enterprise",
+    "erp",
+    "crm",
+    "hr",
+    "payroll",
+    "project-management",
+    "inventory",
+    "finance",
+    "workflows"
+  ],
+  "author": "SmartEnterpriseHub Team",
+  "license": "MIT"
+}
