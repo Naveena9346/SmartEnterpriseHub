@@ -8,6 +8,12 @@ import { EmployeePage } from './pages/EmployeePage';
 import { ProjectPage } from './pages/ProjectPage';
 import { KanbanPage } from './pages/KanbanPage';
 import { WorkflowPage } from './pages/WorkflowPage';
+import { CrmPage } from './pages/CrmPage';
+import { InventoryPage } from './pages/InventoryPage';
+import { FinancePage } from './pages/FinancePage';
+import { DocumentPage } from './pages/DocumentPage';
+import { AuditLogPage } from './pages/AuditLogPage';
+import { SettingsPage } from './pages/SettingsPage';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { token, isLoading } = useAuth();
@@ -27,12 +33,12 @@ export const App: React.FC = () => {
           <Route path="/projects" element={<ProtectedRoute><ProjectPage /></ProtectedRoute>} />
           <Route path="/kanban" element={<ProtectedRoute><KanbanPage /></ProtectedRoute>} />
           <Route path="/workflows" element={<ProtectedRoute><WorkflowPage /></ProtectedRoute>} />
-          <Route path="/crm" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-          <Route path="/inventory" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-          <Route path="/finance" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-          <Route path="/documents" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-          <Route path="/audit-logs" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
-          <Route path="/settings" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+          <Route path="/crm" element={<ProtectedRoute><CrmPage /></ProtectedRoute>} />
+          <Route path="/inventory" element={<ProtectedRoute><InventoryPage /></ProtectedRoute>} />
+          <Route path="/finance" element={<ProtectedRoute><FinancePage /></ProtectedRoute>} />
+          <Route path="/documents" element={<ProtectedRoute><DocumentPage /></ProtectedRoute>} />
+          <Route path="/audit-logs" element={<ProtectedRoute><AuditLogPage /></ProtectedRoute>} />
+          <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>

@@ -9,6 +9,12 @@ import projectRouter from './modules/project/project.router';
 import taskRouter from './modules/task/task.router';
 import workflowRouter from './modules/workflow/workflow.router';
 import analyticsRouter from './modules/analytics/analytics.router';
+import crmRouter from './modules/crm/crm.router';
+import inventoryRouter from './modules/inventory/inventory.router';
+import financeRouter from './modules/finance/finance.router';
+import documentRouter from './modules/document/document.router';
+import auditRouter from './modules/audit/audit.router';
+import settingsRouter from './modules/settings/settings.router';
 
 import { globalErrorHandler } from './middleware/error.middleware';
 import { DatabaseContext } from './database/db';
@@ -45,6 +51,12 @@ export const createApp = async (): Promise<Application> => {
   app.use(`${apiV1}/tasks`, taskRouter);
   app.use(`${apiV1}/workflows`, workflowRouter);
   app.use(`${apiV1}/analytics`, analyticsRouter);
+  app.use(`${apiV1}/crm`, crmRouter);
+  app.use(`${apiV1}/inventory`, inventoryRouter);
+  app.use(`${apiV1}/finance`, financeRouter);
+  app.use(`${apiV1}/documents`, documentRouter);
+  app.use(`${apiV1}/audit-logs`, auditRouter);
+  app.use(`${apiV1}/settings`, settingsRouter);
 
   // Global Error Handler
   app.use(globalErrorHandler);
