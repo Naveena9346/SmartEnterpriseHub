@@ -1,0 +1,123 @@
+export enum UserRole {
+  SUPER_ADMIN = 'SUPER_ADMIN',
+  ORG_ADMIN = 'ORG_ADMIN',
+  HR_MANAGER = 'HR_MANAGER',
+  PROJECT_MANAGER = 'PROJECT_MANAGER',
+  TEAM_MANAGER = 'TEAM_MANAGER',
+  EMPLOYEE = 'EMPLOYEE',
+  SALES_MANAGER = 'SALES_MANAGER',
+  ACCOUNTANT = 'ACCOUNTANT',
+  INVENTORY_MANAGER = 'INVENTORY_MANAGER',
+  VIEWER = 'VIEWER'
+}
+
+export enum AttendanceStatus {
+  PRESENT = 'PRESENT',
+  LATE = 'LATE',
+  ABSENT = 'ABSENT',
+  HALF_DAY = 'HALF_DAY',
+  ON_LEAVE = 'ON_LEAVE'
+}
+
+export enum LeaveStatus {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
+  CANCELLED = 'CANCELLED'
+}
+
+export enum LeaveType {
+  ANNUAL = 'ANNUAL',
+  SICK = 'SICK',
+  MATERNITY = 'MATERNITY',
+  PATERNITY = 'PATERNITY',
+  UNPAID = 'UNPAID',
+  CASUAL = 'CASUAL'
+}
+
+export enum ProjectStatus {
+  PLANNING = 'PLANNING',
+  IN_PROGRESS = 'IN_PROGRESS',
+  ON_HOLD = 'ON_HOLD',
+  COMPLETED = 'COMPLETED',
+  CANCELLED = 'CANCELLED'
+}
+
+export enum TaskStatus {
+  BACKLOG = 'BACKLOG',
+  TODO = 'TODO',
+  IN_PROGRESS = 'IN_PROGRESS',
+  IN_REVIEW = 'IN_REVIEW',
+  DONE = 'DONE'
+}
+
+export enum TaskPriority {
+  LOW = 'LOW',
+  MEDIUM = 'MEDIUM',
+  HIGH = 'HIGH',
+  URGENT = 'URGENT'
+}
+
+export enum LeadStage {
+  NEW = 'NEW',
+  CONTACTED = 'CONTACTED',
+  QUALIFIED = 'QUALIFIED',
+  PROPOSAL_SENT = 'PROPOSAL_SENT',
+  NEGOTIATION = 'NEGOTIATION',
+  CLOSED_WON = 'CLOSED_WON',
+  CLOSED_LOST = 'CLOSED_LOST'
+}
+
+export enum InvoiceStatus {
+  DRAFT = 'DRAFT',
+  SENT = 'SENT',
+  PAID = 'PAID',
+  PARTIALLY_PAID = 'PARTIALLY_PAID',
+  OVERDUE = 'OVERDUE',
+  CANCELLED = 'CANCELLED'
+}
+
+export enum ExpenseStatus {
+  DRAFT = 'DRAFT',
+  SUBMITTED = 'SUBMITTED',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
+  REIMBURSED = 'REIMBURSED'
+}
+
+export enum PurchaseOrderStatus {
+  DRAFT = 'DRAFT',
+  SUBMITTED = 'SUBMITTED',
+  APPROVED = 'APPROVED',
+  ORDERED = 'ORDERED',
+  RECEIVED = 'RECEIVED',
+  CANCELLED = 'CANCELLED'
+}
+
+export enum WorkflowModuleType {
+  LEAVE_REQUEST = 'LEAVE_REQUEST',
+  EXPENSE_CLAIM = 'EXPENSE_CLAIM',
+  PURCHASE_ORDER = 'PURCHASE_ORDER',
+  DOCUMENT_APPROVAL = 'DOCUMENT_APPROVAL',
+  CUSTOM = 'CUSTOM'
+}
+
+export enum ApprovalAction {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED'
+}
+
+// Role Permission Hierarchy Map
+export const ROLE_HIERARCHY: Record<UserRole, number> = {
+  [UserRole.SUPER_ADMIN]: 100,
+  [UserRole.ORG_ADMIN]: 90,
+  [UserRole.HR_MANAGER]: 75,
+  [UserRole.PROJECT_MANAGER]: 70,
+  [UserRole.SALES_MANAGER]: 70,
+  [UserRole.ACCOUNTANT]: 70,
+  [UserRole.INVENTORY_MANAGER]: 70,
+  [UserRole.TEAM_MANAGER]: 60,
+  [UserRole.EMPLOYEE]: 30,
+  [UserRole.VIEWER]: 10
+};
