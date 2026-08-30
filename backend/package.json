@@ -2,6 +2,7 @@
   "name": "smart-enterprise-hub-backend",
   "version": "1.0.0",
   "description": "Backend API Server for SmartEnterpriseHub Platform",
+  "license": "UNLICENSED",
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
